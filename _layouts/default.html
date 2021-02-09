@@ -22,13 +22,15 @@
          
         
         
-        {% if site.logo %}
+      
+
+        <p>{{ site.description | default: site.github.project_tagline }}</p>
+          {% if site.logo %}
           <!-- <img src="{{site.logo | relative_url}}" alt="Logo" />
           -->
         <a href="https://discord.gg/Gmtm8Bqgqv"><img border="0" alt="Logo" src="https://1000logos.net/wp-content/uploads/2020/10/Discord-logo.png"></a>
         {% endif %}
-
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
+        
        <div class="navigation">
          <a href="https://graveplayz.github.io/rsmwiki">Home Page</a><br>
          <a href="https://graveplayz.github.io/rsmwiki/gettingstarted">Getting Started</a>
