@@ -11,4 +11,4 @@
 
 ### Configuration
 
-- Visit The [Configuration](https://graveplayz.github.io/rsmwiki/configuration) page next!
+- Visit The <a href="https://graveplayz.github.io/rsmwiki/configuration" target="_blank">Configuration</a> page next!
