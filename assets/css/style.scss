@@ -4,7 +4,7 @@
 @import "jekyll-theme-minimal";
 
 /* Dropdown Button */
-.dropbtn {
+.v1dropbtn {
   background-color: #3498DB;
   color: white;
   padding: 16px;
@@ -14,18 +14,18 @@
 }
 
 /* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
+.v1dropbtn:hover, .dropbtn:focus {
   background-color: #2980B9;
 }
 
 /* The container <div> - needed to position the dropdown content */
-.dropdown {
+.v1dropdown {
   position: relative;
   display: inline-block;
 }
 
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
+.v1dropdown-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
@@ -35,7 +35,7 @@
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.v1dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
@@ -43,7 +43,52 @@
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
+.v1dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+/* Dropdown Button */
+.v2dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.v2dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.v2dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.v2dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.v2dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.v2dropdown-content a:hover {background-color: #ddd}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
