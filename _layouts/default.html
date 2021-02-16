@@ -8,14 +8,14 @@
     <script>
       /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+function v1myFunction() {
+  document.getElementById("v1myDropdown").classList.toggle("show");
 }
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
+  if (!event.target.matches('.v1dropbtn')) {
+    var dropdowns = document.getElementsByClassName("v1dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
@@ -24,6 +24,21 @@ window.onclick = function(event) {
       }
     }
   }
+}
+      function v2myFunction() {
+  document.getElementById("v2myDropdown").classList.toggle("show");
+        window.onclick = function(event) {
+  if (!event.target.matches('.v2dropbtn')) {
+    var dropdowns = document.getElementsByClassName("v2dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 }
     </script>      
     
@@ -59,17 +74,17 @@ window.onclick = function(event) {
         
         <a href="/rsmwiki">Home Page</a><br>
         
-        <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtnv">V1 Docs</button>
-  <div id="myDropdown" class="dropdown-content">
+        <div class="v1dropdown">
+  <button onclick="v1myFunction()" class="v1dropbtnv">V1 Docs</button>
+  <div id="v1Dropdown" class="v1dropdown-content">
     <a href="/rsmwiki/v1/gettingstarted">Getting Started</a>
     <a href="/rsmwiki/v1/configuration">Configuration</a>
     <a href="#">Link 3</a>
   </div>
 </div>
-         <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtnv">V2 Docs</button>
-  <div id="myDropdown" class="dropdown-content">
+         <div class="v2dropdown">
+  <button onclick="v2myFunction()" class="v1dropbtnv">V2 Docs</button>
+  <div id="v2Dropdown" class="v1dropdown-content">
     <a href="/rsmwiki/v2/gettingstarted">Getting Started</a>
     <a href="/rsmwiki/v2/configuration">Configuration</a>
     <a href="#">Link 3</a>
