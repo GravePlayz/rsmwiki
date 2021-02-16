@@ -6,40 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
-      /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function v1myFunction() {
-  document.getElementById("v1myDropdown").classList.toggle("v1show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.v1dropbtn')) {
-    var dropdowns = document.getElementsByClassName("v1dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('v1show')) {
-        openDropdown.classList.remove('v1show');
-      }
-    }
-  }
-}
-      function v2myFunction() {
-  document.getElementById("v2myDropdown").classList.toggle("v2show");
-        window.onclick = function(event) {
-  if (!event.target.matches('.v2dropbtn')) {
-    var dropdowns = document.getElementsByClassName("v2dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('v2show')) {
-        openDropdown.classList.remove('v2show');
-      }
-    }
-  }
-}
-}
+   
+    
     </script>      
     
    
@@ -74,7 +42,7 @@ window.onclick = function(event) {
         
         <a href="/rsmwiki">Home Page</a><br>
         
-        <div class="v1dropdown">
+        <!--<div class="v1dropdown">
   <button onclick="v1myFunction()" class="v1dropbtnv">V1 Docs</button>
   <div id="v1Dropdown" class="v1dropdown-content">
     <a href="/rsmwiki/v1/gettingstarted">Getting Started</a>
@@ -90,6 +58,7 @@ window.onclick = function(event) {
     <a href="#">Link 3</a>
   </div>
 </div>
+-->
         
         
         
