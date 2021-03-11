@@ -1,0 +1,399 @@
+// Tipo Theme Mixins
+// ========================================================================
+
+@mixin hook-navbar() {
+  font-weight: 500;
+
+  .uk-drop {
+    width: 360px;
+  }
+
+  .uk-search-navbar .uk-search-input {
+    height: 50px;
+    font-size: 1.0625rem;
+    padding-left: 1.1875rem;
+    background: transparent;
+  }
+
+  @media (max-width: $breakpoint-medium) {
+    .uk-search-navbar {
+      background-color: $global-primary-background;
+    }
+  }
+}
+
+@mixin hook-text-lead() {
+  font-weight: 500;
+}
+
+@mixin hook-breadcrumb-item-active() {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin hook-logo() {
+  font-weight: 600;
+}
+
+@mixin hook-button-misc() {
+
+  // Primary outline
+  .uk-button-primary-outline {
+    background-color: $button-default-background;
+    color: $button-primary-background;
+    border: $button-border-width solid $button-primary-background;
+  }
+
+  .uk-button-primary-outline:hover,
+  .uk-button-primary-outline:focus {
+    background-color: $button-primary-background;
+    color: $button-primary-hover-color;
+    border: $button-border-width solid $button-primary-background;
+  }
+
+  .uk-button-primary-outline:active,
+  .uk-button-primary-outline.uk-active {
+    background-color: $button-primary-background;
+    color: $button-primary-active-color;
+    border: $button-border-width solid $button-primary-background;
+  }
+
+  .uk-light, .uk-section-primary, .uk-section-secondary {
+    .uk-button-primary-outline {
+      color: $inverse-global-muted-color;
+      border-color: $inverse-global-muted-color;
+      background-color: transparent;
+    }    
+
+    .uk-button-primary-outline:hover,
+    .uk-button-primary-outline:focus,
+    .uk-button-primary-outline:active,
+    .uk-button-primary-outline.uk-active {
+      color: $inverse-global-color;
+      border-color: $inverse-global-color;
+      background-color: transparent;
+    }
+  }
+}
+
+
+@mixin hook-card-misc() {
+
+  .uk-card-category {
+    padding: $global-small-gutter 28px 26px;
+
+    + .uk-card-category {
+      margin-top: $global-small-gutter;
+    }
+  }
+}
+
+@mixin hook-article-meta() {
+
+  .uk-avatar-small {
+    margin-right: 15px;
+    max-width: 36px;
+  }
+}
+
+@mixin hook-article-misc() {
+  .uk-article-content {
+    font-size: 1.0625rem;
+  }
+}
+
+@mixin hook-accordion-title() {
+
+  overflow: hidden;
+  background-color: $global-default-background;
+  padding: 18px 26px;
+  font-weight: 500;
+
+  &::after {
+    content: "";
+    width: ($accordion-title-line-height * 1em);
+    height: ($accordion-title-line-height * 1em);
+    float: right;
+    @include svg-fill($internal-accordion-close-image, "#000", $accordion-icon-color);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+  .uk-open>&::after {
+    @include svg-fill($internal-accordion-open-image, "#000", $accordion-icon-color);
+  }
+
+}
+
+@mixin hook-accordion-content() {
+  padding: 26px;
+  background-color: $global-default-background;
+}
+
+
+@mixin hook-section-misc() {
+  .uk-section-default + .uk-section-default,
+  .uk-section-muted + .uk-section-muted {
+    padding-top: 0;
+  }
+}
+
+@mixin hook-inverse-component-search() {
+
+  .uk-search-input { 
+    color: $inverse-search-color; 
+  }
+
+  .uk-search-input:-ms-input-placeholder { color: $inverse-search-placeholder-color !important; }
+  .uk-search-input::placeholder { color: $inverse-search-placeholder-color; }
+
+
+  //
+  // Icon
+  //
+  .uk-search .uk-search-icon { color: $inverse-search-icon-color; }
+  .uk-search .uk-search-icon:hover { color: $inverse-search-icon-color; }
+
+  //
+  // Style modifier
+  //
+  .uk-search-default .uk-search-input {
+    background-color: $inverse-search-default-background;
+    border-color: transparent;
+  }
+  .uk-search-default .uk-search-input:focus {
+    background-color: $inverse-search-default-focus-background;
+    border-color: transparent;
+  }
+  
+}
+
+@mixin hook-search-misc() {
+
+  .uk-search {
+    .uk-icon:not(.uk-preserve) [stroke*='#']:not(.uk-preserve) {
+        stroke-width: 2;
+    }    
+  }
+
+  .uk-search-default .uk-search-icon ~ div .uk-search-input {
+    padding-left: 0;
+    padding-right: 60px;
+    border-bottom: solid 3px $global-inverse-color;
+    font-size: $global-xxlarge-font-size;
+    height: 50px;
+
+    &:focus {
+      border-bottom: solid 3px $global-inverse-color;
+    }
+  }
+
+  .uk-section-hero {
+    z-index: 10;
+  }
+
+    // Search
+  .awesomplete [hidden], #search-results {
+      display: none;
+  }
+  
+  .awesomplete {
+      .visually-hidden {
+          position: absolute;
+          clip: rect(0, 0, 0, 0);
+      }
+  
+      mark {
+          background: inherit;
+          color: inherit;
+      }
+      
+      li:hover mark {
+          background: inherit;
+          color: $global-primary-background;
+      }
+      
+      li[aria-selected="true"] mark {
+          background: inherit;
+          color: $global-primary-background;
+      }
+  
+      > ul {
+          position: absolute;
+          left: 0;
+          z-index: 1;
+          min-width: 100%;
+          box-sizing: border-box;
+          list-style: none;
+          padding: 0;
+          margin: 10px 0 0 0;
+          background: #fff;
+          box-shadow: $global-medium-box-shadow;
+          overflow: hidden;  
+          text-shadow: none;
+          font-weight: 400;
+          color: $base-heading-color;
+          &:empty {
+              display: none;
+          }
+  
+          > li {
+              position: relative;
+              padding: 18px 36px;
+              cursor: pointer;
+          
+              &:hover {
+                  background: $global-muted-background;
+                  color: $global-primary-background;
+              }
+          
+              &[aria-selected="true"] {
+                  background: $global-muted-background;
+                  color: $global-primary-background;
+              }
+          }
+              
+      }
+  }
+  
+  @supports (transform: scale(0)) {
+      .awesomplete > ul {
+          transition: .3s cubic-bezier(.4,.2,.5,1.4);
+          transform-origin: 1.43em -.43em;
+      }
+      
+      .awesomplete > ul[hidden],
+      .awesomplete > ul:empty {
+          opacity: 0;
+          transform: scale(0);
+          display: block;
+          transition-timing-function: ease;
+      }
+  }
+
+    .uk-search-navbar {
+      .awesomplete {
+        > ul {
+          margin-top: 16px;
+
+          > li {
+            padding: 0.75rem 1.1875rem;
+          }          
+        }
+      }
+
+    }
+}
+
+@mixin hook-nav-default-item(){
+  font-weight: 500;
+}
+
+@mixin hook-utility-misc() {
+
+  .uk-text-xsmall {
+    font-size: $global-xsmall-font-size;
+  }
+
+  .uk-text-500 {
+    font-weight: 500;
+  }
+
+  .uk-icon-button {
+    background-color: $global-primary-background;
+    color: $global-inverse-color;
+
+    &:hover {
+      background-color: darken($global-primary-background, 5%);
+      color: $global-inverse-color;
+    }
+  }
+
+  .uk-widget-contact {
+    min-width: 300px;
+    max-width: 360px;
+    margin: 40px;
+    z-index: 20;
+
+    .uk-card-header {
+      background-color: darken($global-primary-background, 1%);
+      border-bottom: none;
+
+      h5 {
+        padding-right: 35px;
+        color: #fff;
+
+        .uk-icon {
+          position: absolute;
+          z-index: 1000;
+          top: 8px;
+          right: 10px;
+          padding: 5px;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .uk-card-body {
+      max-height: calc(100vh - 240px);
+      overflow: auto;
+    }
+
+    .uk-card-default {
+      border-radius: 8px;
+    }
+
+    .uk-icon-button {
+      background-color: $global-primary-background;
+      color: $global-inverse-color;
+      width: 54px;
+      height: 54px;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: darken($global-primary-background, 5%);
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    .uk-widget-contact {
+      min-width: 320px;
+    }
+  }
+
+  .uk-icon-category {
+    max-width: 80px;
+  }
+
+  .uk-icon-category-small {
+    max-width: 160px;
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    .uk-icon-category {
+      max-width: 200px;
+      margin-left: $margin-margin;
+    }
+  }
+
+  .uk-overlay-video {
+    background-color: rgba($global-secondary-background, 0.3);
+
+    &:hover {
+      background-color: rgba($global-secondary-background, 0.4);
+    }
+  }
+
+  .uk-navbar-wrapper {
+    z-index: 990;
+  }
+
+  .uk-margin-xsmall-top {
+    margin-top: 6px;
+  }
+}
